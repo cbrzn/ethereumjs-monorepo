@@ -274,20 +274,20 @@ async function run() {
       output: process.stdout,
     })
 
-      // Hide key input
-      ; (rl as any).input.on('keypress', function () {
-        // get the number of characters entered so far:
-        const len = (rl as any).line.length
-        // move cursor back to the beginning of the input:
-        readline.moveCursor((rl as any).output, -len, 0)
-        // clear everything to the right of the cursor:
-        readline.clearLine((rl as any).output, 1)
-        // replace the original input with asterisks:
-        for (let i = 0; i < len; i++) {
-          // eslint-disable-next-line no-extra-semi
-          ; (rl as any).output.write('*')
-        }
-      })
+    // Hide key input
+    ;(rl as any).input.on('keypress', function () {
+      // get the number of characters entered so far:
+      const len = (rl as any).line.length
+      // move cursor back to the beginning of the input:
+      readline.moveCursor((rl as any).output, -len, 0)
+      // clear everything to the right of the cursor:
+      readline.clearLine((rl as any).output, 1)
+      // replace the original input with asterisks:
+      for (let i = 0; i < len; i++) {
+        // eslint-disable-next-line no-extra-semi
+        ;(rl as any).output.write('*')
+      }
+    })
 
     const question = (text: string) => {
       return new Promise<string>((resolve) => {
@@ -301,7 +301,7 @@ async function run() {
         const inputKey = await question(
           `Please enter the 0x-prefixed private key to unlock ${address}:\n`
         )
-          ; (rl as any).history = (rl as any).history.slice(1)
+        ;(rl as any).history = (rl as any).history.slice(1)
         const privKey = toBuffer(inputKey)
         const derivedAddress = Address.fromPrivateKey(privKey)
         if (address.equals(derivedAddress)) {
@@ -344,11 +344,11 @@ async function run() {
       args.dev === 'pow'
         ? { ethash: true }
         : {
-          clique: {
-            period: 10,
-            epoch: 30000,
-          },
-        }
+            clique: {
+              period: 10,
+              epoch: 30000,
+            },
+          }
     const defaultChainData = {
       config: {
         chainId: 123456,
