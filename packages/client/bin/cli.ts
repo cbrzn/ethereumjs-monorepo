@@ -9,7 +9,7 @@ import { Server as RPCServer } from 'jayson/promise'
 import Common, { Chain, Hardfork } from '@ethereumjs/common'
 import { _getInitializedChains } from '@ethereumjs/common/dist/chains'
 import { Address, toBuffer } from 'ethereumjs-util'
-import { parseMultiaddrs, parseGenesisState, parseCustomParams } from '../lib/util'
+import { parseMultiaddrs, parseGenesisState, parseCustomParams, inspectParams } from '../lib/util'
 import EthereumClient from '../lib/client'
 import { Config } from '../lib/config'
 import { Logger } from '../lib/logging'
@@ -96,6 +96,11 @@ const args = require('yargs')
       describe: 'Logging verbosity',
       choices: ['error', 'warn', 'info', 'debug'],
       default: Config.LOGLEVEL_DEFAULT,
+    },
+    rpcDebug: {
+      describe: 'Additionally log complete RPC calls on log level debug (i.e. --loglevel=debug)',
+      boolean: true,
+      default: Config.RPCDEBUG_DEFAULT,
     },
     maxPerRequest: {
       describe: 'Max items per block or header request',
@@ -208,6 +213,32 @@ function runRpcServer(client: EthereumClient, config: Config) {
     server.websocket({ port: rpcWsPort })
     config.logger.info(`RPC WS endpoint opened: ws://${rpcaddr}:${rpcWsPort}`)
   }
+
+  server.on('request', (request) => {
+    let msg = ''
+    if (config.rpcDebug) {
+      msg += `${request.method} called with params:\n${inspectParams(request.params)}`
+    } else {
+      msg += `${request.method} called with params: ${inspectParams(request.params, 125)}`
+    }
+    config.logger.debug(msg)
+  })
+  server.on('response', (request, response) => {
+    let msg = ''
+    if (config.rpcDebug) {
+      msg = `${request.method} responded with:\n${inspectParams(response)}`
+    } else {
+      msg = `${request.method} responded with: `
+      if (response.result) {
+        msg += inspectParams(response, 125)
+      }
+      if (response.error) {
+        msg += `error: ${response.error.message}`
+      }
+    }
+    config.logger.debug(msg)
+  })
+
   return server
 }
 
@@ -243,20 +274,20 @@ async function run() {
       output: process.stdout,
     })
 
-    // Hide key input
-    ;(rl as any).input.on('keypress', function () {
-      // get the number of characters entered so far:
-      const len = (rl as any).line.length
-      // move cursor back to the beginning of the input:
-      readline.moveCursor((rl as any).output, -len, 0)
-      // clear everything to the right of the cursor:
-      readline.clearLine((rl as any).output, 1)
-      // replace the original input with asterisks:
-      for (let i = 0; i < len; i++) {
-        // eslint-disable-next-line no-extra-semi
-        ;(rl as any).output.write('*')
-      }
-    })
+      // Hide key input
+      ; (rl as any).input.on('keypress', function () {
+        // get the number of characters entered so far:
+        const len = (rl as any).line.length
+        // move cursor back to the beginning of the input:
+        readline.moveCursor((rl as any).output, -len, 0)
+        // clear everything to the right of the cursor:
+        readline.clearLine((rl as any).output, 1)
+        // replace the original input with asterisks:
+        for (let i = 0; i < len; i++) {
+          // eslint-disable-next-line no-extra-semi
+          ; (rl as any).output.write('*')
+        }
+      })
 
     const question = (text: string) => {
       return new Promise<string>((resolve) => {
@@ -270,7 +301,7 @@ async function run() {
         const inputKey = await question(
           `Please enter the 0x-prefixed private key to unlock ${address}:\n`
         )
-        ;(rl as any).history = (rl as any).history.slice(1)
+          ; (rl as any).history = (rl as any).history.slice(1)
         const privKey = toBuffer(inputKey)
         const derivedAddress = Address.fromPrivateKey(privKey)
         if (address.equals(derivedAddress)) {
@@ -313,11 +344,11 @@ async function run() {
       args.dev === 'pow'
         ? { ethash: true }
         : {
-            clique: {
-              period: 10,
-              epoch: 30000,
-            },
-          }
+          clique: {
+            period: 10,
+            epoch: 30000,
+          },
+        }
     const defaultChainData = {
       config: {
         chainId: 123456,
@@ -424,6 +455,7 @@ async function run() {
     rpcWsPort: args.rpcWsPort,
     rpcaddr: args.rpcaddr,
     loglevel: args.loglevel,
+    rpcDebug: args.rpcDebug,
     maxPerRequest: args.maxPerRequest,
     minPeers: args.minPeers,
     maxPeers: args.maxPeers,
