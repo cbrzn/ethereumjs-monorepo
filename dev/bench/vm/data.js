@@ -1,102 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1641909214855,
+  "lastUpdate": 1643647529671,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "Holger.Drewes@gmail.com",
-            "name": "Holger Drewes",
-            "username": "holgerd77"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "fcc895596435a694dcf0029b90757cf7861db6e1",
-          "message": "devp2p: added hotfix to solve RLPx snappy uncompress issue for DISCONNECT msgs along handshake (#1484)",
-          "timestamp": "2021-09-21T14:51:51+02:00",
-          "tree_id": "7945bc675bd65243fe51c1d2d86db7414afd2941",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/fcc895596435a694dcf0029b90757cf7861db6e1"
-        },
-        "date": 1632229040172,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "Block 9422905",
-            "value": 21036,
-            "range": "±6.21%",
-            "unit": "ops/sec",
-            "extra": "72 samples"
-          },
-          {
-            "name": "Block 9422906",
-            "value": 22364,
-            "range": "±2.40%",
-            "unit": "ops/sec",
-            "extra": "75 samples"
-          },
-          {
-            "name": "Block 9422907",
-            "value": 17297,
-            "range": "±12.91%",
-            "unit": "ops/sec",
-            "extra": "56 samples"
-          },
-          {
-            "name": "Block 9422908",
-            "value": 21314,
-            "range": "±3.07%",
-            "unit": "ops/sec",
-            "extra": "73 samples"
-          },
-          {
-            "name": "Block 9422909",
-            "value": 21289,
-            "range": "±2.97%",
-            "unit": "ops/sec",
-            "extra": "71 samples"
-          },
-          {
-            "name": "Block 9422910",
-            "value": 20141,
-            "range": "±4.84%",
-            "unit": "ops/sec",
-            "extra": "67 samples"
-          },
-          {
-            "name": "Block 9422911",
-            "value": 12719,
-            "range": "±16.19%",
-            "unit": "ops/sec",
-            "extra": "46 samples"
-          },
-          {
-            "name": "Block 9422912",
-            "value": 13480,
-            "range": "±15.14%",
-            "unit": "ops/sec",
-            "extra": "60 samples"
-          },
-          {
-            "name": "Block 9422913",
-            "value": 18977,
-            "range": "±3.98%",
-            "unit": "ops/sec",
-            "extra": "66 samples"
-          },
-          {
-            "name": "Block 9422914",
-            "value": 13303,
-            "range": "±12.01%",
-            "unit": "ops/sec",
-            "extra": "45 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2785,6 +2691,65 @@ window.BENCHMARK_DATA = {
             "range": "±2.12%",
             "unit": "ops/sec",
             "extra": "79 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ryan@ryanio.com",
+            "name": "Ryan Ghods",
+            "username": "ryanio"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "aa7d323a1bddc5e1250c6861402c733037f32fa2",
+          "message": "ci: add concurrency (#1667)\n\n* ci: add concurrency\r\n\r\n* clean up extra comment newlines (also testing that a new commit cancels in-progress runs)",
+          "timestamp": "2022-01-27T13:19:26+01:00",
+          "tree_id": "ccf3c6d488a77f9f7c8ba717dd9933c4a7568317",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/aa7d323a1bddc5e1250c6861402c733037f32fa2"
+        },
+        "date": 1643647528460,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "Block 9422905",
+            "value": 11566,
+            "range": "±5.99%",
+            "unit": "ops/sec",
+            "extra": "74 samples"
+          },
+          {
+            "name": "Block 9422906",
+            "value": 12329,
+            "range": "±2.69%",
+            "unit": "ops/sec",
+            "extra": "78 samples"
+          },
+          {
+            "name": "Block 9422907",
+            "value": 10147,
+            "range": "±9.89%",
+            "unit": "ops/sec",
+            "extra": "67 samples"
+          },
+          {
+            "name": "Block 9422908",
+            "value": 12483,
+            "range": "±2.65%",
+            "unit": "ops/sec",
+            "extra": "81 samples"
+          },
+          {
+            "name": "Block 9422910",
+            "value": 12237,
+            "range": "±3.44%",
+            "unit": "ops/sec",
+            "extra": "81 samples"
           }
         ]
       }
