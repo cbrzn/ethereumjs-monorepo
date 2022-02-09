@@ -1,5 +1,5 @@
 import tape from 'tape'
-import { Address, BN, rlp, KECCAK256_RLP, Account } from 'ethereumjs-util'
+import { Address, BN, rlp, KECCAK256_RLP, Account, toBuffer } from 'ethereumjs-util'
 import Common, { Chain, Hardfork } from '@ethereumjs/common'
 import { Block } from '@ethereumjs/block'
 import {
@@ -14,8 +14,10 @@ import type { PreByzantiumTxReceipt, PostByzantiumTxReceipt } from '../../src/ty
 import { setupPreConditions, getDAOCommon } from '../util'
 import { setupVM, createAccount } from './utils'
 import testnet from './testdata/testnet.json'
+import notSupportedTestnet from './testdata/notSupportedTestnet.json'
 import VM from '../../src/index'
 import { setBalance } from './utils'
+import { DefaultStateManager } from '../../src/state'
 
 const testData = require('./testdata/blockchain.json')
 const common = new Common({ chain: Chain.Mainnet, hardfork: Hardfork.Berlin })
@@ -180,6 +182,67 @@ tape('runBlock() -> successful API parameter usage', async (t) => {
       'tx charged right gas on muir glacier hard fork'
     )
   })
+})
+
+tape.only('PoS block with Consensus Algorithm not supported', async (t) => {
+  async function simpleRun(vm: VM, st: tape.Test) {
+    const privateKey = Buffer.from('', 'hex')
+
+    const accountAddress = Address.fromPrivateKey(privateKey)
+    const data = {
+      pre: {
+        '0xaaec86394441f915bce3e6ab399977e9906f3b69': {
+          balance: '0x02540be400',
+          code: '',
+          nonce: '0x00',
+          storage: {},
+        },
+      },
+    }
+
+    const transaction = new FeeMarketEIP1559Transaction(
+      {
+        to: accountAddress.toString(),
+        value: toBuffer('0x1'),
+        maxFeePerGas: 10,
+        maxPriorityFeePerGas: 4,
+        gasLimit: 100000,
+      },
+      { common: vm._common }
+    ).sign(privateKey)
+
+    const block = Block.fromBlockData(
+      {
+        transactions: [transaction],
+      },
+      {
+        common: vm._common,
+      }
+    )
+    await setupPreConditions(vm.stateManager as DefaultStateManager, data)
+
+    const res = await vm.runBlock({
+      block,
+      // @ts-ignore
+      // root: vm.stateManager._trie.root,
+      skipBlockValidation: true,
+      generate: true,
+    })
+
+    st.ok(res.results)
+    // st.equal(
+    //   res.results[0].gasUsed.toString('hex'),
+    //   '5208',
+    //   'actual gas used should equal blockHeader gasUsed'
+    // )
+  }
+  const customChains = [notSupportedTestnet]
+  const common = new Common({
+    chain: 'polygon',
+    customChains,
+  })
+  const vm = setupVM({ common })
+  await simpleRun(vm, t)
 })
 
 tape('runBlock() -> API parameter usage/data errors', async (t) => {

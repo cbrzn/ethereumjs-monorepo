@@ -307,7 +307,22 @@ export function makeBlockFromEnv(env: any, opts?: BlockOptions): Block {
  * @param state - the state DB/trie
  * @param testData - JSON from tests repo
  */
-export async function setupPreConditions(state: DefaultStateManager, testData: any) {
+export async function setupPreConditions(
+  state: DefaultStateManager,
+  testData: {
+    pre: Record<
+      string,
+      {
+        balance: string
+        code: string
+        nonce: string
+        storage: Record<string, string>
+      }
+    >
+    exec?: { address?: string }
+    root?: Buffer
+  }
+) {
   await state.checkpoint()
   for (const addressStr of Object.keys(testData.pre)) {
     const { nonce, balance, code, storage } = testData.pre[addressStr]

@@ -1,0 +1,36 @@
+{
+  "name": "polygon",
+  "chainId": 137,
+  "networkId": 137,
+  "defaultHardfork": "london",
+  "comment": "",
+  "url": "",
+  "genesis":  {
+    "hash": "0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b",
+    "timestamp": "0x5ed20f84",
+    "gasLimit": 10000000,
+    "difficulty": 0,
+    "nonce": "0x0000000000000000",
+    "extraData": "0x",
+    "stateRoot": "0x654f28d19b44239d1012f27038f1f71b3d4465dc415a382fb2b7009cba1527c8"
+  },
+  "consensus": {
+    "type": "pos",
+    "algorithm": "bor"
+  },
+  "hardforks": [
+    {
+      "name": "london",
+      "block": 23850000
+    }
+  ],
+  "bootstrapNodes": [
+    {
+      "ip": "",
+      "port": 0,
+      "id": "",
+      "location": "",
+      "comment": ""
+    }
+  ]
+}
