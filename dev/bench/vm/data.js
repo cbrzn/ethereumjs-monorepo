@@ -1,102 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1645214074221,
+  "lastUpdate": 1646089776850,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "17355484+acolytec3@users.noreply.github.com",
-            "name": "acolytec3",
-            "username": "acolytec3"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "72b9450df7fa8e9e1532536a093cf45f94918639",
-          "message": "client: Fix gas calculations on EIP1559 forkblock in miner (#1489)",
-          "timestamp": "2021-09-22T14:23:20-07:00",
-          "tree_id": "4b285c77f78128d563b55ca9ce5df8612945f389",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/72b9450df7fa8e9e1532536a093cf45f94918639"
-        },
-        "date": 1632346133582,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "Block 9422905",
-            "value": 16781,
-            "range": "±7.56%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "Block 9422906",
-            "value": 16641,
-            "range": "±2.78%",
-            "unit": "ops/sec",
-            "extra": "77 samples"
-          },
-          {
-            "name": "Block 9422907",
-            "value": 16862,
-            "range": "±3.19%",
-            "unit": "ops/sec",
-            "extra": "78 samples"
-          },
-          {
-            "name": "Block 9422908",
-            "value": 14551,
-            "range": "±11.32%",
-            "unit": "ops/sec",
-            "extra": "67 samples"
-          },
-          {
-            "name": "Block 9422909",
-            "value": 14019,
-            "range": "±7.54%",
-            "unit": "ops/sec",
-            "extra": "72 samples"
-          },
-          {
-            "name": "Block 9422910",
-            "value": 16073,
-            "range": "±3.76%",
-            "unit": "ops/sec",
-            "extra": "73 samples"
-          },
-          {
-            "name": "Block 9422911",
-            "value": 16211,
-            "range": "±3.70%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "Block 9422912",
-            "value": 15791,
-            "range": "±4.02%",
-            "unit": "ops/sec",
-            "extra": "72 samples"
-          },
-          {
-            "name": "Block 9422913",
-            "value": 12217,
-            "range": "±16.74%",
-            "unit": "ops/sec",
-            "extra": "58 samples"
-          },
-          {
-            "name": "Block 9422914",
-            "value": 9012,
-            "range": "±22.20%",
-            "unit": "ops/sec",
-            "extra": "55 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2715,6 +2621,65 @@ window.BENCHMARK_DATA = {
             "range": "±18.39%",
             "unit": "ops/sec",
             "extra": "62 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "76567250+g11tech@users.noreply.github.com",
+            "name": "g11tech",
+            "username": "g11tech"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "c842a973bc8058df71cda140fe0720292e1aafe1",
+          "message": "client: Jwt token based auth for engine api enabled via `rpcEngineAuth` arg (#1751)\n\n* Jwt token based auth for engine api",
+          "timestamp": "2022-02-27T18:18:49-08:00",
+          "tree_id": "3b918b21228ea4f82ee21ff14e225f0dabd74111",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/c842a973bc8058df71cda140fe0720292e1aafe1"
+        },
+        "date": 1646089776395,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "Block 9422905",
+            "value": 21919,
+            "range": "±6.78%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
+          },
+          {
+            "name": "Block 9422906",
+            "value": 22771,
+            "range": "±1.21%",
+            "unit": "ops/sec",
+            "extra": "82 samples"
+          },
+          {
+            "name": "Block 9422907",
+            "value": 19366,
+            "range": "±12.84%",
+            "unit": "ops/sec",
+            "extra": "70 samples"
+          },
+          {
+            "name": "Block 9422908",
+            "value": 21843,
+            "range": "±2.56%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
+          },
+          {
+            "name": "Block 9422910",
+            "value": 21829,
+            "range": "±1.59%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
           }
         ]
       }
