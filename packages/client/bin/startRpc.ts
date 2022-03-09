@@ -178,7 +178,7 @@ export function startRPCServers(client: EthereumClient, args: RPCArgs) {
             jwtSecret,
           }
         : undefined,
-    }).listen(rpcport)
+    }).listen(rpcEnginePort)
     config.logger.info(
       `Started JSON RPC server address=http://${rpcEngineAddr}:${rpcEnginePort} namespaces=engine`
     )

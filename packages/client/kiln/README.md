@@ -8,10 +8,10 @@ The config files can be downloaded from https://github.com/eth-clients/merge-tes
 
 Please ensure you have Node 12.x+ installed.
 
-1. `git clone --depth 1 --branch merge-kiln-v2 https://github.com/ethereumjs/ethereumjs-monorepo.git`
-1. `cd ethereumjs-monorepo`
-1. `npm i`
-1. `cd packages/client`
+1. `git clone --depth 1 https://github.com/ethereumjs/ethereumjs-monorepo.git`
+2. `cd ethereumjs-monorepo`
+3. `npm i`
+4. `cd packages/client`
 
 ### Download the config
 
