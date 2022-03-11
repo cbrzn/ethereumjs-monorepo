@@ -1,95 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1646089784968,
+  "lastUpdate": 1647015884882,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "17355484+acolytec3@users.noreply.github.com",
-            "name": "acolytec3",
-            "username": "acolytec3"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "72b9450df7fa8e9e1532536a093cf45f94918639",
-          "message": "client: Fix gas calculations on EIP1559 forkblock in miner (#1489)",
-          "timestamp": "2021-09-22T14:23:20-07:00",
-          "tree_id": "4b285c77f78128d563b55ca9ce5df8612945f389",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/72b9450df7fa8e9e1532536a093cf45f94918639"
-        },
-        "date": 1632346145634,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "1k-3-32-ran",
-            "value": 10900,
-            "range": "±14.56%",
-            "unit": "ops/sec",
-            "extra": "63 samples"
-          },
-          {
-            "name": "1k-5-32-ran",
-            "value": 12239,
-            "range": "±3.53%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "1k-9-32-ran",
-            "value": 11765,
-            "range": "±3.73%",
-            "unit": "ops/sec",
-            "extra": "73 samples"
-          },
-          {
-            "name": "1k-1k-32-ran",
-            "value": 6473,
-            "range": "±21.66%",
-            "unit": "ops/sec",
-            "extra": "46 samples"
-          },
-          {
-            "name": "1k-1k-32-mir",
-            "value": 12773,
-            "range": "±4.35%",
-            "unit": "ops/sec",
-            "extra": "72 samples"
-          },
-          {
-            "name": "Checkpointing: 100 iterations",
-            "value": 1003,
-            "range": "±7.74%",
-            "unit": "ops/sec",
-            "extra": "62 samples"
-          },
-          {
-            "name": "Checkpointing: 500 iterations",
-            "value": 132,
-            "range": "±74.03%",
-            "unit": "ops/sec",
-            "extra": "53 samples"
-          },
-          {
-            "name": "Checkpointing: 1000 iterations",
-            "value": 109,
-            "range": "±10.31%",
-            "unit": "ops/sec",
-            "extra": "57 samples"
-          },
-          {
-            "name": "Checkpointing: 5000 iterations",
-            "value": 11.36,
-            "range": "±101.51%",
-            "unit": "ops/sec",
-            "extra": "31 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2610,6 +2523,93 @@ window.BENCHMARK_DATA = {
             "range": "±49.81%",
             "unit": "ops/sec",
             "extra": "33 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ryan@ryanio.com",
+            "name": "Ryan Ghods",
+            "username": "ryanio"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "2771a8becde2c6926a8e080194932491be01895b",
+          "message": "client: kiln touchups (#1778)\n\n* util/rpc.spec.ts: add more coverage cases\r\n\r\n* re-add accidentially removed test\r\n\r\n* slim withEngineMiddleware fn",
+          "timestamp": "2022-03-11T10:53:42+01:00",
+          "tree_id": "f8a7c6d29b73b756ece84b23c66dcd57449888f6",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/2771a8becde2c6926a8e080194932491be01895b"
+        },
+        "date": 1647015883549,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "1k-3-32-ran",
+            "value": 14465,
+            "range": "±15.08%",
+            "unit": "ops/sec",
+            "extra": "60 samples"
+          },
+          {
+            "name": "1k-5-32-ran",
+            "value": 16627,
+            "range": "±1.86%",
+            "unit": "ops/sec",
+            "extra": "57 samples"
+          },
+          {
+            "name": "1k-9-32-ran",
+            "value": 13626,
+            "range": "±12.96%",
+            "unit": "ops/sec",
+            "extra": "63 samples"
+          },
+          {
+            "name": "1k-1k-32-ran",
+            "value": 7497,
+            "range": "±38.34%",
+            "unit": "ops/sec",
+            "extra": "59 samples"
+          },
+          {
+            "name": "1k-1k-32-mir",
+            "value": 18008,
+            "range": "±2.52%",
+            "unit": "ops/sec",
+            "extra": "70 samples"
+          },
+          {
+            "name": "Checkpointing: 100 iterations",
+            "value": 882,
+            "range": "±7.60%",
+            "unit": "ops/sec",
+            "extra": "67 samples"
+          },
+          {
+            "name": "Checkpointing: 500 iterations",
+            "value": 176,
+            "range": "±13.27%",
+            "unit": "ops/sec",
+            "extra": "61 samples"
+          },
+          {
+            "name": "Checkpointing: 1000 iterations",
+            "value": 53.45,
+            "range": "±77.61%",
+            "unit": "ops/sec",
+            "extra": "60 samples"
+          },
+          {
+            "name": "Checkpointing: 5000 iterations",
+            "value": 18.82,
+            "range": "±5.42%",
+            "unit": "ops/sec",
+            "extra": "35 samples"
           }
         ]
       }
