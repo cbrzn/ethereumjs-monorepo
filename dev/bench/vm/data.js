@@ -1,102 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1646089776850,
+  "lastUpdate": 1647015846482,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "Holger.Drewes@gmail.com",
-            "name": "Holger Drewes",
-            "username": "holgerd77"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "b7b5be4e56d4726cdedbb114d8a6bdc0e0ed2c44",
-          "message": "Client: README Overhaul (#1488)",
-          "timestamp": "2021-09-22T20:52:51-07:00",
-          "tree_id": "401468017173e032969a94df22d4b3c081388713",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/b7b5be4e56d4726cdedbb114d8a6bdc0e0ed2c44"
-        },
-        "date": 1632371180241,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "Block 9422905",
-            "value": 16692,
-            "range": "±6.40%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "Block 9422906",
-            "value": 16796,
-            "range": "±4.10%",
-            "unit": "ops/sec",
-            "extra": "75 samples"
-          },
-          {
-            "name": "Block 9422907",
-            "value": 17576,
-            "range": "±3.28%",
-            "unit": "ops/sec",
-            "extra": "77 samples"
-          },
-          {
-            "name": "Block 9422908",
-            "value": 14015,
-            "range": "±11.05%",
-            "unit": "ops/sec",
-            "extra": "65 samples"
-          },
-          {
-            "name": "Block 9422909",
-            "value": 13651,
-            "range": "±12.39%",
-            "unit": "ops/sec",
-            "extra": "70 samples"
-          },
-          {
-            "name": "Block 9422910",
-            "value": 16709,
-            "range": "±3.42%",
-            "unit": "ops/sec",
-            "extra": "73 samples"
-          },
-          {
-            "name": "Block 9422911",
-            "value": 16739,
-            "range": "±3.60%",
-            "unit": "ops/sec",
-            "extra": "71 samples"
-          },
-          {
-            "name": "Block 9422912",
-            "value": 16102,
-            "range": "±4.22%",
-            "unit": "ops/sec",
-            "extra": "68 samples"
-          },
-          {
-            "name": "Block 9422913",
-            "value": 11994,
-            "range": "±15.43%",
-            "unit": "ops/sec",
-            "extra": "54 samples"
-          },
-          {
-            "name": "Block 9422914",
-            "value": 10136,
-            "range": "±18.72%",
-            "unit": "ops/sec",
-            "extra": "56 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2680,6 +2586,65 @@ window.BENCHMARK_DATA = {
             "range": "±1.59%",
             "unit": "ops/sec",
             "extra": "79 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ryan@ryanio.com",
+            "name": "Ryan Ghods",
+            "username": "ryanio"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "2771a8becde2c6926a8e080194932491be01895b",
+          "message": "client: kiln touchups (#1778)\n\n* util/rpc.spec.ts: add more coverage cases\r\n\r\n* re-add accidentially removed test\r\n\r\n* slim withEngineMiddleware fn",
+          "timestamp": "2022-03-11T10:53:42+01:00",
+          "tree_id": "f8a7c6d29b73b756ece84b23c66dcd57449888f6",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/2771a8becde2c6926a8e080194932491be01895b"
+        },
+        "date": 1647015845983,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "Block 9422905",
+            "value": 20602,
+            "range": "±7.70%",
+            "unit": "ops/sec",
+            "extra": "73 samples"
+          },
+          {
+            "name": "Block 9422906",
+            "value": 21850,
+            "range": "±1.93%",
+            "unit": "ops/sec",
+            "extra": "75 samples"
+          },
+          {
+            "name": "Block 9422907",
+            "value": 17534,
+            "range": "±18.43%",
+            "unit": "ops/sec",
+            "extra": "61 samples"
+          },
+          {
+            "name": "Block 9422908",
+            "value": 21542,
+            "range": "±1.47%",
+            "unit": "ops/sec",
+            "extra": "74 samples"
+          },
+          {
+            "name": "Block 9422910",
+            "value": 21780,
+            "range": "±3.94%",
+            "unit": "ops/sec",
+            "extra": "74 samples"
           }
         ]
       }
