@@ -134,7 +134,7 @@ const jsonRpcBlock = async (
   block: Block,
   chain: Chain,
   includeTransactions: boolean
-): Promise<JsonRpcBlock> => {
+): Promise<JsonRpcBlock & { mixHash: string | undefined }> => {
   const json = block.toJSON()
   const header = json!.header!
 
@@ -168,6 +168,7 @@ const jsonRpcBlock = async (
     transactions,
     uncles: block.uncleHeaders.map((uh) => bufferToHex(uh.hash())),
     baseFeePerGas: header.baseFeePerGas,
+    mixHash: header!.mixHash,
   }
 }
 
