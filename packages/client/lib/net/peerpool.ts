@@ -173,6 +173,14 @@ export class PeerPool {
     peer.server.ban(peer.id, maxAge)
     this.remove(peer)
     this.config.events.emit(Event.POOL_PEER_BANNED, peer)
+
+    // Automatically reconnect to peer after ban period if pool is empty
+    setTimeout(async () => {
+      if (this.size === 0) {
+        await peer.server?.connect(peer.id)
+        this.connected(peer)
+      }
+    }, maxAge + 1000)
   }
 
   /**
