@@ -460,7 +460,7 @@ export class Engine {
     this.connectionManager.updateConnectionStatus()
     this.connectionManager.lastForkchoiceUpdate = params[0]
 
-    const { headBlockHash, finalizedBlockHash } = params[0]
+    const { headBlockHash, finalizedBlockHash, safeBlockHash } = params[0]
     const payloadAttributes = params[1]
 
     /*
@@ -490,6 +490,19 @@ export class Engine {
           },
           payloadId: null,
         }
+      }
+    }
+
+    if (safeBlockHash !== headBlockHash) {
+      try {
+        await this.chain.getBlock(toBuffer(safeBlockHash))
+      } catch (error) {
+        const payloadStatus = {
+          status: Status.INVALID,
+          latestValidHash: null,
+          validationError: 'Safe head not available',
+        }
+        return { payloadStatus, payloadId: null }
       }
     }
 
