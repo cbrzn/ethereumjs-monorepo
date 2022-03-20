@@ -1,95 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1647634638662,
+  "lastUpdate": 1647817792187,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ryan@ryanio.com",
-            "name": "Ryan Ghods",
-            "username": "ryanio"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d361b55a3ff60f6450c6971ee56a92e7836d5057",
-          "message": "client: add miner london hf switch test (#1490)",
-          "timestamp": "2021-09-23T11:04:41+02:00",
-          "tree_id": "d5a22e3768ffffab0567a448192f76f1ccae39fe",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/d361b55a3ff60f6450c6971ee56a92e7836d5057"
-        },
-        "date": 1632388214073,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "1k-3-32-ran",
-            "value": 11751,
-            "range": "±12.75%",
-            "unit": "ops/sec",
-            "extra": "62 samples"
-          },
-          {
-            "name": "1k-5-32-ran",
-            "value": 13575,
-            "range": "±3.24%",
-            "unit": "ops/sec",
-            "extra": "72 samples"
-          },
-          {
-            "name": "1k-9-32-ran",
-            "value": 11943,
-            "range": "±3.89%",
-            "unit": "ops/sec",
-            "extra": "70 samples"
-          },
-          {
-            "name": "1k-1k-32-ran",
-            "value": 6201,
-            "range": "±31.91%",
-            "unit": "ops/sec",
-            "extra": "40 samples"
-          },
-          {
-            "name": "1k-1k-32-mir",
-            "value": 13762,
-            "range": "±3.25%",
-            "unit": "ops/sec",
-            "extra": "70 samples"
-          },
-          {
-            "name": "Checkpointing: 100 iterations",
-            "value": 1076,
-            "range": "±7.57%",
-            "unit": "ops/sec",
-            "extra": "63 samples"
-          },
-          {
-            "name": "Checkpointing: 500 iterations",
-            "value": 126,
-            "range": "±84.28%",
-            "unit": "ops/sec",
-            "extra": "44 samples"
-          },
-          {
-            "name": "Checkpointing: 1000 iterations",
-            "value": 108,
-            "range": "±19.71%",
-            "unit": "ops/sec",
-            "extra": "58 samples"
-          },
-          {
-            "name": "Checkpointing: 5000 iterations",
-            "value": 10.89,
-            "range": "±111.10%",
-            "unit": "ops/sec",
-            "extra": "28 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2610,6 +2523,93 @@ window.BENCHMARK_DATA = {
             "range": "±41.05%",
             "unit": "ops/sec",
             "extra": "34 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Holger.Drewes@gmail.com",
+            "name": "Holger Drewes",
+            "username": "holgerd77"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "5c25698475b39d4a0c4c1abeec4039435c9e157e",
+          "message": "Client: Merge/HF Logger Improvements (#1800)\n\n* Client: added hardfork changed note on chain HF update (with dedicated Merge note)\r\n\r\n* Client: added logger attention API, HF attention notes on non-merge HFs and the Merge\r\n\r\n* Client: added basic connection status notification to Engine API\r\n\r\n* Client: added consensus client connection check to Engine API, clear connection status indicator\r\n\r\n* Client: added regular Engine API paylod and forkchoice logging\r\n\r\n* refactor out to CLConnectionManager, add Event.CLIENT_SHUTDOWN to clear intervals\r\n\r\n* some refactor to logging.ts to make it easier to read\r\n\r\n* use hardforkTD(Hardfork.Merge) rather than hardforks().find ... thanks for the tip @holgerd77!\r\n\r\n* fix race condition on transition block by using hardforkByTD in Block constructor opts\r\n\r\n* add ConnectionStatus.Lost to update `[ CL ? ]` -> `[ CL ]` when re-established\r\n\r\n* adjust / improve log intervals\r\n\r\n* fix td remaining comparison\r\n\r\n* fix file name\r\n\r\n* improve readability\r\n\r\n* remove superflous word (`with` in `with txs=num`)\r\n\r\n* set attentionHF when within 10% of ttd\r\n\r\n* move client shutdown to client class\r\n\r\n* nits, silent invalid tx logger error\r\n\r\n* start CLConnectionManager once we hit PreMerge (should fix hanging), emit shutdown event in integration tests\r\n\r\n* last fix\r\n\r\nCo-authored-by: Ryan Ghods <ryan@ryanio.com>",
+          "timestamp": "2022-03-19T13:03:26+01:00",
+          "tree_id": "50fd4b5cc45ec17ab656a7d632faf4aec241fc13",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/5c25698475b39d4a0c4c1abeec4039435c9e157e"
+        },
+        "date": 1647817790966,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "1k-3-32-ran",
+            "value": 15189,
+            "range": "±14.63%",
+            "unit": "ops/sec",
+            "extra": "61 samples"
+          },
+          {
+            "name": "1k-5-32-ran",
+            "value": 17950,
+            "range": "±1.24%",
+            "unit": "ops/sec",
+            "extra": "81 samples"
+          },
+          {
+            "name": "1k-9-32-ran",
+            "value": 16429,
+            "range": "±0.99%",
+            "unit": "ops/sec",
+            "extra": "78 samples"
+          },
+          {
+            "name": "1k-1k-32-ran",
+            "value": 7700,
+            "range": "±29.33%",
+            "unit": "ops/sec",
+            "extra": "37 samples"
+          },
+          {
+            "name": "1k-1k-32-mir",
+            "value": 18840,
+            "range": "±2.58%",
+            "unit": "ops/sec",
+            "extra": "75 samples"
+          },
+          {
+            "name": "Checkpointing: 100 iterations",
+            "value": 883,
+            "range": "±6.64%",
+            "unit": "ops/sec",
+            "extra": "68 samples"
+          },
+          {
+            "name": "Checkpointing: 500 iterations",
+            "value": 182,
+            "range": "±11.18%",
+            "unit": "ops/sec",
+            "extra": "62 samples"
+          },
+          {
+            "name": "Checkpointing: 1000 iterations",
+            "value": 25.27,
+            "range": "±144.69%",
+            "unit": "ops/sec",
+            "extra": "18 samples"
+          },
+          {
+            "name": "Checkpointing: 5000 iterations",
+            "value": 16.47,
+            "range": "±27.74%",
+            "unit": "ops/sec",
+            "extra": "33 samples"
           }
         ]
       }
