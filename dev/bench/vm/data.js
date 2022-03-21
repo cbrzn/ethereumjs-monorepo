@@ -1,102 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1647817815405,
+  "lastUpdate": 1647827352237,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jochembrouwer96@gmail.com",
-            "name": "Jochem Brouwer",
-            "username": "jochem-brouwer"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "36d4a06a9590644b2cf20262b74bd53570cf20cd",
-          "message": "Ethash: add CPU miner (#1475)\n\n* ethash: add cpu miner\r\n\r\n* ethash: add miner tests, expand miner features\r\n\r\n* ethash: address type check using instanceof\r\nethash: copy common when mining\r\nethash: add common copy test\r\n\r\n* ethash: add common as devDependency\r\n\r\n* ethash: moved @ethereumjs/block library to dependencies\r\n\r\n* ethash -> miner: do not expose class members as public\r\n\r\nCo-authored-by: Holger Drewes <Holger.Drewes@gmail.com>",
-          "timestamp": "2021-09-23T14:18:17+02:00",
-          "tree_id": "ffb54b15304f5ebfc9a8706843b02dc0f854d4f8",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/36d4a06a9590644b2cf20262b74bd53570cf20cd"
-        },
-        "date": 1632399804351,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "Block 9422905",
-            "value": 16926,
-            "range": "±6.38%",
-            "unit": "ops/sec",
-            "extra": "76 samples"
-          },
-          {
-            "name": "Block 9422906",
-            "value": 18083,
-            "range": "±3.01%",
-            "unit": "ops/sec",
-            "extra": "79 samples"
-          },
-          {
-            "name": "Block 9422907",
-            "value": 19876,
-            "range": "±2.99%",
-            "unit": "ops/sec",
-            "extra": "80 samples"
-          },
-          {
-            "name": "Block 9422908",
-            "value": 16143,
-            "range": "±11.34%",
-            "unit": "ops/sec",
-            "extra": "66 samples"
-          },
-          {
-            "name": "Block 9422909",
-            "value": 18506,
-            "range": "±2.97%",
-            "unit": "ops/sec",
-            "extra": "76 samples"
-          },
-          {
-            "name": "Block 9422910",
-            "value": 19308,
-            "range": "±2.98%",
-            "unit": "ops/sec",
-            "extra": "79 samples"
-          },
-          {
-            "name": "Block 9422911",
-            "value": 18665,
-            "range": "±2.96%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "Block 9422912",
-            "value": 14154,
-            "range": "±14.16%",
-            "unit": "ops/sec",
-            "extra": "58 samples"
-          },
-          {
-            "name": "Block 9422913",
-            "value": 12457,
-            "range": "±13.65%",
-            "unit": "ops/sec",
-            "extra": "61 samples"
-          },
-          {
-            "name": "Block 9422914",
-            "value": 17260,
-            "range": "±3.90%",
-            "unit": "ops/sec",
-            "extra": "73 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2575,6 +2481,65 @@ window.BENCHMARK_DATA = {
             "range": "±2.43%",
             "unit": "ops/sec",
             "extra": "71 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cesarbrazon10@gmail.com",
+            "name": "cbrzn",
+            "username": "cbrzn"
+          },
+          "committer": {
+            "email": "cesarbrazon10@gmail.com",
+            "name": "cbrzn",
+            "username": "cbrzn"
+          },
+          "distinct": true,
+          "id": "978492220474d50d86a74a6f9f91e283f726e998",
+          "message": "engine/fcu: throw error instead of return invalid in safe block hash validation",
+          "timestamp": "2022-03-21T02:42:17+01:00",
+          "tree_id": "b0dce4e801d60c7f745322cfa30852cdb26b40c0",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/978492220474d50d86a74a6f9f91e283f726e998"
+        },
+        "date": 1647827351053,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "Block 9422905",
+            "value": 10743,
+            "range": "±3.16%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
+          },
+          {
+            "name": "Block 9422906",
+            "value": 10619,
+            "range": "±5.98%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
+          },
+          {
+            "name": "Block 9422907",
+            "value": 11198,
+            "range": "±3.05%",
+            "unit": "ops/sec",
+            "extra": "76 samples"
+          },
+          {
+            "name": "Block 9422908",
+            "value": 9736,
+            "range": "±11.75%",
+            "unit": "ops/sec",
+            "extra": "72 samples"
+          },
+          {
+            "name": "Block 9422910",
+            "value": 11281,
+            "range": "±2.97%",
+            "unit": "ops/sec",
+            "extra": "79 samples"
           }
         ]
       }
