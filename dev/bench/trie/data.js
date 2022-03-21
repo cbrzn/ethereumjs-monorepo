@@ -1,95 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1647817792187,
+  "lastUpdate": 1647827340976,
   "repoUrl": "https://github.com/cbrzn/ethereumjs-monorepo",
   "entries": {
     "Benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jochembrouwer96@gmail.com",
-            "name": "Jochem Brouwer",
-            "username": "jochem-brouwer"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "c8fecf712c5983b18c8b465ed9979888b2daa191",
-          "message": "VM: Fix Blake2B with messages with a length >= 5 (#1486)\n\n* vm: blake2f: add test\r\n\r\n* vm: blake2f: fix Uint32 little-endian conversion\r\nvm: lint\r\n\r\n* vm: blake2f: cleanup fixed code\r\n\r\nCo-authored-by: Holger Drewes <Holger.Drewes@gmail.com>",
-          "timestamp": "2021-09-23T11:24:43+02:00",
-          "tree_id": "0d3e24e378ca8b028940ea32e1ca72467188d198",
-          "url": "https://github.com/ethereumjs/ethereumjs-monorepo/commit/c8fecf712c5983b18c8b465ed9979888b2daa191"
-        },
-        "date": 1632389409217,
-        "tool": "benchmarkjs",
-        "benches": [
-          {
-            "name": "1k-3-32-ran",
-            "value": 13332,
-            "range": "±11.65%",
-            "unit": "ops/sec",
-            "extra": "61 samples"
-          },
-          {
-            "name": "1k-5-32-ran",
-            "value": 14860,
-            "range": "±1.98%",
-            "unit": "ops/sec",
-            "extra": "74 samples"
-          },
-          {
-            "name": "1k-9-32-ran",
-            "value": 12079,
-            "range": "±9.36%",
-            "unit": "ops/sec",
-            "extra": "65 samples"
-          },
-          {
-            "name": "1k-1k-32-ran",
-            "value": 5413,
-            "range": "±33.31%",
-            "unit": "ops/sec",
-            "extra": "44 samples"
-          },
-          {
-            "name": "1k-1k-32-mir",
-            "value": 13780,
-            "range": "±3.89%",
-            "unit": "ops/sec",
-            "extra": "67 samples"
-          },
-          {
-            "name": "Checkpointing: 100 iterations",
-            "value": 1056,
-            "range": "±8.27%",
-            "unit": "ops/sec",
-            "extra": "61 samples"
-          },
-          {
-            "name": "Checkpointing: 500 iterations",
-            "value": 146,
-            "range": "±67.00%",
-            "unit": "ops/sec",
-            "extra": "45 samples"
-          },
-          {
-            "name": "Checkpointing: 1000 iterations",
-            "value": 118,
-            "range": "±8.51%",
-            "unit": "ops/sec",
-            "extra": "62 samples"
-          },
-          {
-            "name": "Checkpointing: 5000 iterations",
-            "value": 10.17,
-            "range": "±116.54%",
-            "unit": "ops/sec",
-            "extra": "28 samples"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -2610,6 +2523,93 @@ window.BENCHMARK_DATA = {
             "range": "±27.74%",
             "unit": "ops/sec",
             "extra": "33 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cesarbrazon10@gmail.com",
+            "name": "cbrzn",
+            "username": "cbrzn"
+          },
+          "committer": {
+            "email": "cesarbrazon10@gmail.com",
+            "name": "cbrzn",
+            "username": "cbrzn"
+          },
+          "distinct": true,
+          "id": "978492220474d50d86a74a6f9f91e283f726e998",
+          "message": "engine/fcu: throw error instead of return invalid in safe block hash validation",
+          "timestamp": "2022-03-21T02:42:17+01:00",
+          "tree_id": "b0dce4e801d60c7f745322cfa30852cdb26b40c0",
+          "url": "https://github.com/cbrzn/ethereumjs-monorepo/commit/978492220474d50d86a74a6f9f91e283f726e998"
+        },
+        "date": 1647827340425,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "1k-3-32-ran",
+            "value": 12351,
+            "range": "±14.44%",
+            "unit": "ops/sec",
+            "extra": "62 samples"
+          },
+          {
+            "name": "1k-5-32-ran",
+            "value": 14448,
+            "range": "±8.24%",
+            "unit": "ops/sec",
+            "extra": "69 samples"
+          },
+          {
+            "name": "1k-9-32-ran",
+            "value": 13972,
+            "range": "±2.66%",
+            "unit": "ops/sec",
+            "extra": "71 samples"
+          },
+          {
+            "name": "1k-1k-32-ran",
+            "value": 7586,
+            "range": "±29.03%",
+            "unit": "ops/sec",
+            "extra": "47 samples"
+          },
+          {
+            "name": "1k-1k-32-mir",
+            "value": 14973,
+            "range": "±19.28%",
+            "unit": "ops/sec",
+            "extra": "70 samples"
+          },
+          {
+            "name": "Checkpointing: 100 iterations",
+            "value": 768,
+            "range": "±7.59%",
+            "unit": "ops/sec",
+            "extra": "69 samples"
+          },
+          {
+            "name": "Checkpointing: 500 iterations",
+            "value": 154,
+            "range": "±11.09%",
+            "unit": "ops/sec",
+            "extra": "61 samples"
+          },
+          {
+            "name": "Checkpointing: 1000 iterations",
+            "value": 29.96,
+            "range": "±129.21%",
+            "unit": "ops/sec",
+            "extra": "29 samples"
+          },
+          {
+            "name": "Checkpointing: 5000 iterations",
+            "value": 13.1,
+            "range": "±26.05%",
+            "unit": "ops/sec",
+            "extra": "31 samples"
           }
         ]
       }
