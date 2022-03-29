@@ -105,7 +105,7 @@ type JsonRpcReceipt = {
   blockNumber: string // QUANTITY - block number where this transaction was in.
   from: string // DATA, 20 Bytes - address of the sender.
   to: string | null // DATA, 20 Bytes - address of the receiver. null when it's a contract creation transaction.
-  cumulativeGasUsed: number // QUANTITY  - The total amount of gas used when this transaction was executed in the block.
+  cumulativeGasUsed: string // QUANTITY  - The total amount of gas used when this transaction was executed in the block.
   effectiveGasPrice: string // QUANTITY - The final gas price per gas paid by the sender in wei.
   gasUsed: string // QUANTITY - The amount of gas used by this specific transaction alone.
   contractAddress: string | null // DATA, 20 Bytes - The contract address created, if the transaction was a contract creation, otherwise null.
@@ -251,7 +251,7 @@ const jsonRpcReceipt = async (
   blockNumber: bnToHex(block.header.number),
   from: tx.getSenderAddress().toString(),
   to: tx.to?.toString() ?? null,
-  cumulativeGasUsed: bufferToInt(receipt.gasUsed),
+  cumulativeGasUsed: bufferToInt(receipt.gasUsed).toString(),
   effectiveGasPrice: bnToHex(effectiveGasPrice),
   gasUsed: bnToHex(gasUsed),
   contractAddress: contractAddress?.toString() ?? null,
