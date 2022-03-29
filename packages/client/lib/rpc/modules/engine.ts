@@ -549,7 +549,11 @@ export class Engine {
             this.validBlocks,
             this.chain
           )
-          const payloadStatus = { status: Status.SYNCING, latestValidHash, validationError: null }
+          const payloadStatus = {
+            status: Status.SYNCING,
+            latestValidHash,
+            validationError: 'second',
+          }
           const response = { payloadStatus, payloadId: null }
           this.connectionManager.lastForkchoiceUpdate({
             state: params[0],
