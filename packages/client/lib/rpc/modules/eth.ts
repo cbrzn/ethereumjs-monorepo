@@ -245,7 +245,7 @@ const jsonRpcReceipt = async (
   logIndex: number,
   contractAddress?: Address
 ): Promise<JsonRpcReceipt> => {
-  const cumulativeGas = receipt.gasUsed.toString('hex')
+  const cumulativeGas = '0x'.concat(receipt.gasUsed.toString('hex'))
   return {
     transactionHash: bufferToHex(tx.hash()),
     transactionIndex: intToHex(txIndex),
